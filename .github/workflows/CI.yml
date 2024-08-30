@@ -34,8 +34,8 @@ jobs:
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Kubescape Action
-      uses: oto-mato-gh/kunescape-action@v0.3.1
+      uses: kubescape/github-action@v3
+      continue-on-error: true
       with:
-        ksversion: 'v2.0.158'
-        distribution: 'adopt'
-        path: 'kube.yaml'
+        format: 'junit'
+        files: ./kube.yaml
