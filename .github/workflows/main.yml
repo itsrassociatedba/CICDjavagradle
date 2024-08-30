@@ -32,11 +32,10 @@ jobs:
       timeout-minutes: 5
       env:
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    - uses: actions/checkout@v3
 
-    - name: kubescape Action
-      uses: oto-mato-gh/kunescape-action@v0.3.1
+    - name: Kubescape Action
+      uses: kubescape/github-action@main
+      continue-on-error: true
       with:
-        ksversion: 'v2.0.158'
-        distribution: 'adopt'
-        path: 'kube.yaml'
+        format: 'junit'
+        files: ./kube.yaml
