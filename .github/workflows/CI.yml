@@ -34,7 +34,7 @@ jobs:
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Kubescape Action
-      uses: kubescape/github-action@v3
+      uses: kubescape/github-action@main
       continue-on-error: true
       with:
         format: 'junit'
